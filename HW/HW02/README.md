@@ -21,7 +21,9 @@ VCS는 이러한 접근 방식을 통해서 여러명의 개발자가 하나의 
 
 
 
+
 * * *
+
 
 ## <2> DVCS와 VCS의 차이점
 
@@ -43,7 +45,9 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 	
 	참고자료 : [Gitlab DVCS 소개글](https://about.gitlab.com/topics/version-control/benefits-distributed-version-control-system/#what-are-the-advantages-of-using-a-distributed-version-control-system, "Gitlab DVCS")
 
+
 * * *
+
 
 ## <3> GIT을 이용해 remote repository, local repository 생성
 
@@ -66,7 +70,9 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 
 	7. git push : 내가 commit한 내용을 remote repository(Github)으로 옮기는 push 명령어를 통해 Github과 내 로컬 저장소의 내용을 동기화시켰다.
 
+
 * * *
+
 
 ## <4> .gitignore 의 사용법과 작성방식 및 내용에 대한 조사
 
@@ -89,7 +95,9 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 >
 >간단하게 응용해서 쓸 수 있는 방법들을 적어보았다.
 
+
 * * *
+
 
 ## <5> README.md 파일에 사용 된 Mark Down 표기법에 대한 사용 방법 정리
 
@@ -99,17 +107,17 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 
 	헤더는 H1~H6까지 지원되며 #을 붙여서 사용한다
 
-	\# H1
+	>\# H1
 
-	\##H2
+	>\##H2
 
-	\###H3
+	>\###H3
 
-	\####H4
+	>\####H4
 
-	\#####H5
+	>\#####H5
 
-	\######H6
+	>\######H6
 
 
 
@@ -117,14 +125,16 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 
 	숫자 목록은 다음과 같이 사용한다
 
-	1. 일
+	\1. 일
 
-	2. 이
+	\2. 이
 
-	3. 삼
+	\3. 삼
 
 	>1. 일
+	
 	>2. 이
+	
 	>3. 삼
 
 
@@ -133,21 +143,21 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 	\* , \- , \+ 를 사용 할 수 있다
 	>*하나
 	>
-	>	*둘
+	>*둘
 	>
-	>		*셋
+	>*셋
 	>
 	>-하나
 	>
-	>	-둘
+	>-둘
 	>
-	>		-셋
+	>-셋
 	>
 	>+하나
 	>
-	>	+둘
+	>+둘
 	>
-	>		+셋
+	>+셋
 	>
 
 
@@ -170,15 +180,15 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 
 	수평선은 
 
-	* * *
+	\* \* \*
 
-	***
+	\*\*\*
 
-	*****
+	\*\*\*\*\*
 
-	- - -
+	\- \- \-
 
-	---------------------------------------
+	\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
 
 	모두 사용 가능 하다
 
@@ -213,7 +223,7 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 
 	HTML을 이용해서 
 
-	\<img src="/path/to/img.jpg" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck"></img>
+	\<img src="/path/to/img.jpg" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck">\</img>
 
 	같이 생성 할 수 있다.
 
