@@ -50,7 +50,7 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 
 ##### 이미지 파일 참조
 	
-	<img src="/IMG/1gitinit.png" width="100%" height="100%" title="20" alt="git init"></img>
+	![Alt text](/path/to/img.jpg)
 
 	1. git init : 해당 폴더를 새로운 git repository로 설정한다. 사용시 .git이라는 숨김 폴더가 생성됨을 확인했다.
 
