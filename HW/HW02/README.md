@@ -1,11 +1,11 @@
-###<1> VCS란 무엇인가
+### <1> VCS란 무엇인가
 
 Version Control System은 파일을 관리하는 방식 / 도구 중 하나이다.
 
 파일을 변경점이 생김에 따라 여러가지 버전으로 나누어 저장, 관리함으로써 이전 버전의 파일을 불러올 수 있게 해 복구와 여러 버전을 개발 하는 데에 도움을 주는 방식이다.
 
 
-###<2> DVCS와 VCS의 차이점
+### <2> DVCS와 VCS의 차이점
 
 Distributed Version Control System은 오직 서버만이 모든 데이터를 가지고있던 기존의 방식과 달리 각 클라이언트 또한 서버처럼 데이터를 가지고 있는 방식의 버전 관리 시스템이다.
 
@@ -24,9 +24,9 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 	4. 오프라인으로 작업할 수 있는 유연성
 
 
-###<3> GIT을 이용해 remote repository, local repository 생성
+### <3> GIT을 이용해 remote repository, local repository 생성
 
-#####이미지 파일 참조
+##### 이미지 파일 참조
 
 	1. git init : 해당 폴더를 새로운 git repository로 설정한다. 사용시 .git이라는 숨김 폴더가 생성됨을 확인했다.
 
@@ -44,7 +44,7 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 	7. git push : 내가 commit한 내용을 remote repository(Github)으로 옮기는 push 명령어를 통해 Github과 내 로컬 저장소의 내용을 동기화시켰다.
 
 
-###<4> .gitignore 의 사용법과 작성방식 및 내용에 대한 조사
+### <4> .gitignore 의 사용법과 작성방식 및 내용에 대한 조사
 
 
 .gitignore은 add 할 때 매번 제외시키기 귀찮은 불필요한 파일을 걸러주는 역할을 가진다.
@@ -55,7 +55,8 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 
 >예시
 >	> 파일 img.png 파일을 제외하고 싶다면
->	>img.png
+>	>
+>	>	>img.png
 >
 >
 >
@@ -64,9 +65,8 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 
 
 
-###<5> README.md 파일에 사용 된 Mark Down 표기법에 대한 사용 방법 정리
+### <5> README.md 파일에 사용 된 Mark Down 표기법에 대한 사용 방법 정리
 
 위에서 사용한 대로
 
->참고자료 : [MarkDown 사용 방법 정리글][markdownlink] 
->[markdownlink]: https://gist.github.com/ihoneymon/652be052a0727ad59601 "MarkDown 정리글"
+참고자료 : [MarkDown 사용 방법 정리글](https://gist.github.com/ihoneymon/652be052a0727ad59601, "MarkDown 정리글")
