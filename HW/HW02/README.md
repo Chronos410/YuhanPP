@@ -96,36 +96,59 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 
 
 1. 헤더
+
 	헤더는 H1~H6까지 지원되며 #을 붙여서 사용한다
+
 	\# H1
+
 	\##H2
+
 	\###H3
+
 	\####H4
+
 	\#####H5
+
 	\######H6
 
 
+
 2. 목록(숫자)
+
 	숫자 목록은 다음과 같이 사용한다
-	\1. 일
-	\2. 이
-	\3. 삼
+
+	1. 일
+
+	2. 이
+
+	3. 삼
+
 	>1. 일
 	>2. 이
 	>3. 삼
 
 
 3. 순서 없는 목록
+
 	\* , \- , \+ 를 사용 할 수 있다
 	>*하나
+	>
 	>	*둘
+	>
 	>		*셋
+	>
 	>-하나
-	>	-둘	
+	>
+	>	-둘
+	>
 	>		-셋
+	>
 	>+하나
+	>
 	>	+둘
+	>
 	>		+셋
+	>
 
 
 4. 코드
@@ -139,51 +162,53 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 	
 	\```내용```를 이용해서 코드 블럭을 만들 수 있다.
 
-	\<pre><code>{내용}</code></pre>를 사용하는 것으로도 코드 블럭을 만들 수 있다.
+	\<pre>\<code>{내용}\</code>\</pre>를 사용하는 것으로도 코드 블럭을 만들 수 있다.
 
-	
+
 5. 수평선
 
-* * *
 
 	수평선은 
 
-	\* * *
+	* * *
 
-	\***
+	***
 
-	\*****
+	*****
 
-	\- - -
+	- - -
 
-	\---------------------------------------
+	---------------------------------------
 
 	모두 사용 가능 하다
+
+	* * *
 
 
 6. 링크
 
 	1. 참조 링크
 
-	\[link keyword][id]
+		\[link keyword][id]
 
-	\[id]: URL "Optional Title here"
+		\[id]: URL "Optional Title here"
 
 
 	2. 외부 링크
 
-	\[Title](link)
+		\[Title](link)
 
 
 	3. 링크 자동 연결
 	
-	일반적인 URL이나 이메일은 자동으로 잡아준다
-	예시 : https://example.com/
+		일반적인 URL이나 이메일은 자동으로 잡아준다.
+
+		예시 : https://example.com/
 
 
 7. 이미지
 
-	\![Alt text](/path/to/img.jpg)를 사용하거나
+	\![Alt text]\(/path/to/img.jpg)를 사용하거나
 
 
 	HTML을 이용해서 
@@ -192,17 +217,18 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 
 	같이 생성 할 수 있다.
 
+
 8. 강조
 
-	\*single asterisks\*
+	\**single asterisks*\*
 	
-	\_single underscores\_
+	\__single underscores_\_
 	
-	\**double asterisks\**
+	\*\***double asterisks**\*\*
 	
-	\__double underscores\__
+	\_\___double underscores__\_\_
 	
-	\~~cancelline\~~
+	\~\~~~cancelline~~\~\~
 
 
 사실은 이미 잘 정리되어있는 자료의 도움을 받아 아주 쉽게 본문에 적용해 보았다.
