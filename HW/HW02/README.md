@@ -40,7 +40,7 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 
 	4. 오프라인으로 작업할 수 있는 유연성
 	
-	참고자료 : [Gitlab DVCS 소개글](https://about.gitlab.com/topics/version-control/benefits-distributed-version-control-system/#what-are-the-advantages-of-using-a-distributed-version-control-system, "Gitlab DVCS")
+참고자료 : [Gitlab DVCS 소개글](https://about.gitlab.com/topics/version-control/benefits-distributed-version-control-system/#what-are-the-advantages-of-using-a-distributed-version-control-system, "Gitlab DVCS")
 
 <br>
 
@@ -52,8 +52,6 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 
 
 ##### 이미지 파일 참조
-
-	![Alt text](YuhanPP/HW/HW02/IMG/1gitinit.PNG)
 
 	1. git init : 해당 폴더를 새로운 git repository로 설정한다. 사용시 .git이라는 숨김 폴더가 생성됨을 확인했다.
 
@@ -122,45 +120,48 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 	>
 	>\###### H6
 
-	# H1
-	
-	## H2
-
-	### H3
-	
-	#### H4
-	
-	##### H5
-	
-	###### H6
+	>적용 결과
+	>
+	># H1
+	>
+	>## H2
+	>
+	>### H3
+	>
+	>#### H4
+	>
+	>##### H5
+	>
+	>###### H6
 
 <br>
 
 2. 목록(숫자)
 
-<br>
 
-	숫자 목록은 다음과 같이 사용한다
+숫자 목록은 다음과 같이 사용한다
 
-	1\. 일
 
-	2\. 이
+1\. 일
 
-	3\. 삼
+2\. 이
 
-	>1. 일
-	>
-	>2. 이
-	>
-	>3. 삼
+3\. 삼
+
+>1. 일
+>
+>2. 이
+>
+>3. 삼
 
 <br>
 
 3. 순서 없는 목록
 
-<br>
 
 \* , \- , \+ 를 사용 할 수 있다
+
+
 >*하나
 >
 >*둘
@@ -183,12 +184,13 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 <br>
 
 4. 코드
-<br>
+
 	1. 들여쓰기
 
 	탭 또는 공백 4번으로 들여쓰기를 할 수 있다.
 	
 	들여쓴 문장부터 들여쓰지 않은 문장을 만날 때 까지 유지된다.
+
 	<br>
 
 	2. 코드 블럭
@@ -201,7 +203,7 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 
 5. 수평선
 
-<br>
+
 
 수평선은 
 
@@ -223,7 +225,7 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 
 6. 링크
 
-<br>
+
 
 1. 참조 링크
 
@@ -231,13 +233,13 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 
 	\[id]: URL "Optional Title here"
 
-<br>
+
 
 2. 외부 링크
 
 	\[Title](link)
 
-<br>
+
 
 3. 링크 자동 연결
 
@@ -245,11 +247,10 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 
 	예시 : https://example.com/
 
-<br>
+
 
 7. 이미지
 
-<br>
 	
 이미지는
 
@@ -262,8 +263,6 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 <br>
 
 8. 강조
-
-<br>
 
 \**single asterisks*\*
 
