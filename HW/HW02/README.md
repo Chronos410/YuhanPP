@@ -47,7 +47,8 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 
 ##### 이미지 파일 참조
 
-![Alt text](/HW/HW02/IMG/1gitinit.png)
+	![Alt text](YuhanPP/HW/HW02/IMG/1gitinit.PNG)
+
 	1. git init : 해당 폴더를 새로운 git repository로 설정한다. 사용시 .git이라는 숨김 폴더가 생성됨을 확인했다.
 
 	2. git branch -m master main : branch 이름을 master 에서 main으로 수정했다.
