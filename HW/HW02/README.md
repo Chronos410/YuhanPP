@@ -1,5 +1,5 @@
-# 프로그래밍 패턴 2주차 과제에 오신 것을 환영합니다.<br><br>
-
+# 프로그래밍 패턴 2주차 과제에 오신 것을 환영합니다.
+<br>
 ## <1> VCS란 무엇인가
 
 Version Control System은 파일을 관리하는 방식 / 도구 중 하나이다.
@@ -14,9 +14,9 @@ VCS는 이러한 접근 방식을 통해서 여러명의 개발자가 하나의 
 
 개발자들이 주 코드베이스 또는 문서의 개별 복사본인 브랜치를 만들어 안정성을 해치지 않고 실험 할 수 있으며 완성되면 주 코드베이스 또는 문서로 다시 병합하는 것이 가능하다.
 
-
+<br>
 * * *
-
+<br>
 
 ## <2> DVCS와 VCS의 차이점
 
@@ -38,9 +38,9 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 	
 	참고자료 : [Gitlab DVCS 소개글](https://about.gitlab.com/topics/version-control/benefits-distributed-version-control-system/#what-are-the-advantages-of-using-a-distributed-version-control-system, "Gitlab DVCS")
 
-
+<br>
 * * *
-
+<br>
 
 ## <3> GIT을 이용해 remote repository, local repository 생성
 
@@ -64,9 +64,9 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 
 	7. git push : 내가 commit한 내용을 remote repository(Github)으로 옮기는 push 명령어를 통해 Github과 내 로컬 저장소의 내용을 동기화시켰다.
 
-
+<br>
 * * *
-
+<br>
 
 ## <4> .gitignore 의 사용법과 작성방식 및 내용에 대한 조사
 
@@ -89,12 +89,12 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 >
 >간단하게 응용해서 쓸 수 있는 방법들을 적어보았다.
 
-
+<br>
 * * *
-
+<br>
 
 ## <5> README.md 파일에 사용 된 Mark Down 표기법에 대한 사용 방법 정리
-<br><br>
+<br>
 
 1. 헤더
 
@@ -123,7 +123,7 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 	##### H5
 	
 	###### H6
-<br><br>
+<br>
 
 2. 목록(숫자)
 
@@ -166,23 +166,23 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 <br><br>
 
 4. 코드
-
-1. 들여쓰기
+<br>
+	1. 들여쓰기
 
 	탭 또는 공백 4번으로 들여쓰기를 할 수 있다.
 	
 	들여쓴 문장부터 들여쓰지 않은 문장을 만날 때 까지 유지된다.
-<br>
+	<br>
 
-2. 코드 블럭
+	2. 코드 블럭
 	
 	\```내용```를 이용해서 코드 블럭을 만들 수 있다.
 
 	\<pre>\<code>{내용}\</code>\</pre>를 사용하는 것으로도 코드 블럭을 만들 수 있다.
-<br><br>
+	<br>
 
 5. 수평선
-
+<br>
 
 	수평선은 
 
@@ -199,9 +199,10 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 	모두 사용 가능 하다
 
 	* * *
-<br><br>
+<br>
 
 6. 링크
+<br>
 
 	1. 참조 링크
 
@@ -220,10 +221,10 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 		일반적인 URL이나 이메일은 자동으로 잡아준다.
 
 		예시 : https://example.com/
-<br><br>
+<br>
 
 7. 이미지
-
+<br>
 	
 	이미지는
 
@@ -232,10 +233,10 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 	\<img src="/path/to/img.jpg" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck">\</img>
 
 	처럼 사용해서 생성 할 수 있다.
-<br><br>
+<br>
 
 8. 강조
-
+<br>
 
 	\**single asterisks*\*
 	
@@ -246,7 +247,7 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 	\_\___double underscores__\_\_
 	
 	\~\~~~cancelline~~\~\~
-<br><br>
+<br>
 
 마크 다운 사용법은 이미 잘 정리되어있는 자료의 도움을 받아 아주 쉽게 본문에 적용해 보았다.
 
