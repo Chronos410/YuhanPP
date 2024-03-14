@@ -47,7 +47,7 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 
 ##### 이미지 파일 참조
 
-	![Alt text]\(/HW/HW02/IMG/1gitinit.png)
+![Alt text](/HW/HW02/IMG/1gitinit.png)
 	1. git init : 해당 폴더를 새로운 git repository로 설정한다. 사용시 .git이라는 숨김 폴더가 생성됨을 확인했다.
 
 	2. git branch -m master main : branch 이름을 master 에서 main으로 수정했다.
@@ -93,7 +93,7 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 
 
 ## <5> README.md 파일에 사용 된 Mark Down 표기법에 대한 사용 방법 정리
-
+<br><br>
 
 1. 헤더
 
@@ -122,7 +122,7 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 	##### H5
 	
 	###### H6
-
+<br><br>
 
 2. 목록(숫자)
 
@@ -139,7 +139,7 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 	>2. 이
 	>
 	>3. 삼
-
+<br><br>
 
 3. 순서 없는 목록
 
@@ -162,7 +162,7 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 	>
 	>+셋
 	>
-
+<br><br>
 
 4. 코드
 
@@ -171,16 +171,14 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 	탭 또는 공백 4번으로 들여쓰기를 할 수 있다.
 	
 	들여쓴 문장부터 들여쓰지 않은 문장을 만날 때 까지 유지된다.
-
+<br>
 
 2. 코드 블럭
 	
 	\```내용```를 이용해서 코드 블럭을 만들 수 있다.
 
 	\<pre>\<code>{내용}\</code>\</pre>를 사용하는 것으로도 코드 블럭을 만들 수 있다.
-
-
-
+<br><br>
 
 5. 수평선
 
@@ -200,9 +198,7 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 	모두 사용 가능 하다
 
 	* * *
-
-
-
+<br><br>
 
 6. 링크
 
@@ -211,37 +207,34 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 		\[link keyword]\[id]
 
 		\[id]: URL "Optional Title here"
-
+<br>
 
 	2. 외부 링크
 
 		\[Title](link)
-
+<br>
 
 	3. 링크 자동 연결
 	
 		일반적인 URL이나 이메일은 자동으로 잡아준다.
 
 		예시 : https://example.com/
-
-
-
+<br><br>
 
 7. 이미지
 
+	
+	이미지는
+
 	\![Alt text]\(/path/to/img.jpg)를 사용하거나
-
-
-	HTML을 이용해서 
 
 	\<img src="/path/to/img.jpg" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck">\</img>
 
-	같이 생성 할 수 있다.
-
-
-
+	처럼 사용해서 생성 할 수 있다.
+<br><br>
 
 8. 강조
+
 
 	\**single asterisks*\*
 	
@@ -252,8 +245,8 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 	\_\___double underscores__\_\_
 	
 	\~\~~~cancelline~~\~\~
+<br><br>
 
-
-사실은 이미 잘 정리되어있는 자료의 도움을 받아 아주 쉽게 본문에 적용해 보았다.
+마크 다운 사용법은 이미 잘 정리되어있는 자료의 도움을 받아 아주 쉽게 본문에 적용해 보았다.
 
 참고자료 : [MarkDown 사용 방법 정리글](https://gist.github.com/ihoneymon/652be052a0727ad59601, "MarkDown 정리글")
