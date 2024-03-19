@@ -54,10 +54,10 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 
 ##### 이미지 파일 참조
 
-	![예시 이미지](IMG/1gitinit.png)
-	1. git init : 해당 폴더를 새로운 git repository로 설정한다. 사용시 .git이라는 숨김 폴더가 생성됨을 확인했다.
+![예시 이미지](IMG/1gitinit.png)
+1. git init : 해당 폴더를 새로운 git repository로 설정한다. 사용시 .git이라는 숨김 폴더가 생성됨을 확인했다.
 
-	2. git branch -m master main : branch 이름을 master 에서 main으로 수정했다.
+2. git branch -m master main : branch 이름을 master 에서 main으로 수정했다.
 
 	3. git add . : 해당 폴더에는 수업 시간에 이미 만들어둔 파일들이 있었는데 .을 사용해 폴더에 있는 모든 파일을(변경점을) commit의 영향에 들어가는 스테이징 영역에 추가했다.
 
