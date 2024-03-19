@@ -56,24 +56,31 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 
 
 1. git init : 해당 폴더를 새로운 git repository로 설정한다. 사용시 .git이라는 숨김 폴더가 생성됨을 확인했다.
+
 ![1번 이미지](IMG/1gitinit.PNG)
 
 2. git branch -m master main : branch 이름을 master 에서 main으로 수정했다.
+
 ![2번 이미지](IMG/2namechange.PNG)
 
 3. git add . : 해당 폴더에는 수업 시간에 이미 만들어둔 파일들이 있었는데 .을 사용해 폴더에 있는 모든 파일을(변경점을) commit의 영향에 들어가는 스테이징 영역에 추가했다.
-![3번 이미지](IMG/3gitiadd.PNG)
+
+![3번 이미지](IMG/3gitadd.PNG)
 
 4. git commit : add 명령어를 통해 스테이징 영역에서 대기하던 파일들을 commit 명령어로 git에 저장했다. 이 화면은 커밋 메세지를 입력하는 모습이다.
-![4번 이미지](IMG/4gitcommit1.PNG)
+
+![4번 이미지](IMG/4commit1.PNG)
 
 5. git commit 결과 : 커밋 메세지를 입력하고 난 결과 화면이다.
-![5번 이미지](IMG/5gitcommit2.PNG)
+
+![5번 이미지](IMG/5commit2.PNG)
 
 6. git remote add origin https://github.com/Chronos410/YuhanPP.git : remote repository와 연결하기 위해서 YuhanPP라는 이름으로 내 GitHub repository와 연결시켰다.
+
 ![6번 이미지](IMG/6gitremoteadd.PNG)
 
 7. git push : 내가 commit한 내용을 remote repository(Github)으로 옮기는 push 명령어를 통해 Github과 내 로컬 저장소의 내용을 동기화시켰다.
+
 ![1번 이미지](IMG/7gitpush.PNG)
 
 
