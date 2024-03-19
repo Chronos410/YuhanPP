@@ -1,6 +1,8 @@
 # 프로그래밍 패턴 2주차 과제에 오신 것을 환영합니다.
 
-<br>
+
+
+
 
 ## <1> VCS란 무엇인가
 
@@ -16,11 +18,12 @@ VCS는 이러한 접근 방식을 통해서 여러명의 개발자가 하나의 
 
 개발자들이 주 코드베이스 또는 문서의 개별 복사본인 브랜치를 만들어 안정성을 해치지 않고 실험 할 수 있으며 완성되면 주 코드베이스 또는 문서로 다시 병합하는 것이 가능하다.
 
-<br>
+
+
+
 
 * * *
 
-<br>
 
 ## <2> DVCS와 VCS의 차이점
 
@@ -40,19 +43,18 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 
 	4. 오프라인으로 작업할 수 있는 유연성
 	
-참고자료 : [Gitlab DVCS 소개글](https://about.gitlab.com/topics/version-control/benefits-distributed-version-control-system/#what-are-the-advantages-of-using-a-distributed-version-control-system, "Gitlab DVCS")
+	참고자료 : [Gitlab DVCS 소개글](https://about.gitlab.com/topics/version-control/benefits-distributed-version-control-system/#what-are-the-advantages-of-using-a-distributed-version-control-system, "Gitlab DVCS")
 
-<br>
 
 * * *
 
-<br>
 
 ## <3> GIT을 이용해 remote repository, local repository 생성
 
 
 ##### 이미지 파일 참조
 
+	![예시 이미지](IMG/1gitinit.png)
 	1. git init : 해당 폴더를 새로운 git repository로 설정한다. 사용시 .git이라는 숨김 폴더가 생성됨을 확인했다.
 
 	2. git branch -m master main : branch 이름을 master 에서 main으로 수정했다.
@@ -68,11 +70,9 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 
 	7. git push : 내가 commit한 내용을 remote repository(Github)으로 옮기는 push 명령어를 통해 Github과 내 로컬 저장소의 내용을 동기화시켰다.
 
-<br>
 
 * * *
 
-<br>
 
 ## <4> .gitignore 의 사용법과 작성방식 및 내용에 대한 조사
 
@@ -95,192 +95,181 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 >
 >간단하게 응용해서 쓸 수 있는 방법들을 적어보았다.
 
-<br>
 
 * * *
 
-<br>
 
 ## <5> README.md 파일에 사용 된 Mark Down 표기법에 대한 사용 방법 정리
 
 
-#### 1. 헤더
 
 
-헤더는 H1~H6까지 지원되며 앞에 #을 붙여서 사용한다
 
->\# H1
->
->\## H2
->
->\### H3
->
->\#### H4
->
->\##### H5
->
->\###### H6
+1. 헤더
 
->적용 결과
->
-># H1
->
->## H2
->
->### H3
->
->#### H4
->
->##### H5
->
->###### H6
+	헤더는 H1~H6까지 지원되며 #을 붙여서 사용한다
 
-<br>
+	>\# H1
+	>
+	>\## H2
+	>
+	>\### H3
+	>
+	>\#### H4
+	>
+	>\##### H5
+	>
+	>\###### H6
 
-#### 2. 목록(숫자)
+	# H1
+	
+	## H2
+
+	### H3
+	
+	#### H4
+	
+	##### H5
+	
+	###### H6
 
 
-숫자 목록은 다음과 같이 사용한다
 
 
-1\. 일
+2. 목록(숫자)
 
-2\. 이
+	숫자 목록은 다음과 같이 사용한다
 
-3\. 삼
+	1\. 일
 
->1. 일
->
->2. 이
->
->3. 삼
+	2\. 이
 
-<br>
+	3\. 삼
 
-#### 3. 순서 없는 목록
-
-
-\* , \- , \+ 를 사용 할 수 있다
+	>1. 일
+	>
+	>2. 이
+	>
+	>3. 삼
 
 
->*하나
->
->*둘
->
->*셋
->
->-하나
->
->-둘
->
->-셋
->
->+하나
->
->+둘
->
->+셋
->
 
-<br>
 
-#### 4. 코드
+3. 순서 없는 목록
 
+	\* , \- , \+ 를 사용 할 수 있다
+	>*하나
+	>
+	>*둘
+	>
+	>*셋
+	>
+	>-하나
+	>
+	>-둘
+	>
+	>-셋
+	>
+	>+하나
+	>
+	>+둘
+	>
+	>+셋
+	>
+
+
+
+
+4. 코드
 
 1. 들여쓰기
 
-
-    탭 또는 공백 4번으로 들여쓰기를 할 수 있다.
-
-    들여쓴 문장부터 들여쓰지 않은 문장을 만날 때 까지 유지된다.
-
-
-<br>
+	탭 또는 공백 4번으로 들여쓰기를 할 수 있다.
+	
+	들여쓴 문장부터 들여쓰지 않은 문장을 만날 때 까지 유지된다.
 
 
 2. 코드 블럭
-
+	
 	\```내용```를 이용해서 코드 블럭을 만들 수 있다.
-	
+
 	\<pre>\<code>{내용}\</code>\</pre>를 사용하는 것으로도 코드 블럭을 만들 수 있다.
+
+
+
+
+5. 수평선
+
+
+	수평선은 
+
+	\* \* \*
+
+	\*\*\*
+
+	\*\*\*\*\*
+
+	\- \- \-
+
+	\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+
+	모두 사용 가능 하다
+
+	* * *
+
+
+
+
+6. 링크
+
+	1. 참조 링크
+
+		\[link keyword][id]
+
+		\[id]: URL "Optional Title here"
+
+
+	2. 외부 링크
+
+		\[Title](link)
+
+
+	3. 링크 자동 연결
 	
-	```코드 블럭 예시```
+		일반적인 URL이나 이메일은 자동으로 잡아준다.
 
-<br>
-
-#### 5. 수평선
-
-
-수평선은 
-
-\* \* \*
-
-\*\*\*
-
-\*\*\*\*\*
-
-\- \- \-
-
-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
-
-모두 사용 가능 하다
-
-* * *
-
-<br>
-
-#### 6. 링크
-
-
-1. 참조 링크
-
-	\[link keyword]\[id]
-
-	\[id]: URL "Optional Title here"
+		예시 : https://example.com/
 
 
 
-2. 외부 링크
 
-	\[Title](link)
+7. 이미지
+
+	\![Alt text]\(/path/to/img.jpg)를 사용하거나
+
+
+	HTML을 이용해서 
+
+	\<img src="/path/to/img.jpg" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck">\</img>
+
+	같이 생성 할 수 있다.
 
 
 
-3. 링크 자동 연결
 
-	일반적인 URL이나 이메일은 자동으로 잡아준다.
+8. 강조
 
-	예시 : https://example.com/
-
-<br>
-
-#### 7. 이미지
-
+	\**single asterisks*\*
 	
-이미지는
+	\__single underscores_\_
+	
+	\*\***double asterisks**\*\*
+	
+	\_\___double underscores__\_\_
+	
+	\~\~~~cancelline~~\~\~
 
-\![Alt text]\(/path/to/img.jpg)를 사용하거나
 
-\<img src="/path/to/img.jpg" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck">\</img>
-
-처럼 사용해서 생성 할 수 있다.
-
-<br>
-
-#### 8. 강조
-
-\**single asterisks*\*
-
-\__single underscores_\_
-
-\*\***double asterisks**\*\*
-
-\_\___double underscores__\_\_
-
-\~\~~~cancelline~~\~\~
-
-<br>
-
-마크 다운 사용법은 이미 잘 정리되어있는 자료의 도움을 받아 아주 쉽게 본문에 적용해 보았다.
+사실은 이미 잘 정리되어있는 자료의 도움을 받아 아주 쉽게 본문에 적용해 보았다.
 
 참고자료 : [MarkDown 사용 방법 정리글](https://gist.github.com/ihoneymon/652be052a0727ad59601, "MarkDown 정리글")
