@@ -75,7 +75,7 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 
 ![5번 이미지](IMG/5commit2.PNG)
 
-6. git remote add origin 'https://github.com/Chronos410/YuhanPP.git' : remote repository와 연결하기 위해서 YuhanPP라는 이름으로 내 GitHub repository와 연결시켰다.
+6. git remote add origin https://github.com/Chronos410/YuhanPP.git : remote repository와 연결하기 위해서 YuhanPP라는 이름으로 내 GitHub repository와 연결시켰다.
 
 ![6번 이미지](IMG/6gitremoteadd.PNG)
 
