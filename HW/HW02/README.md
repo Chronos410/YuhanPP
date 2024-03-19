@@ -43,7 +43,7 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 
 	4. 오프라인으로 작업할 수 있는 유연성
 	
-	참고자료 : [Gitlab DVCS 소개글](https://about.gitlab.com/topics/version-control/benefits-distributed-version-control-system/#what-are-the-advantages-of-using-a-distributed-version-control-system, "Gitlab DVCS")
+참고자료 : [Gitlab DVCS 소개글](https://about.gitlab.com/topics/version-control/benefits-distributed-version-control-system/#what-are-the-advantages-of-using-a-distributed-version-control-system, "Gitlab DVCS")
 
 
 * * *
@@ -174,9 +174,11 @@ GitLab에선 DVCS의 장점을 다음과 같이 서술했다.
 	* 둘
 	* 셋
 
+
 	- 하나
 	- 둘
 	- 셋
+
 
 	+ 하나
 	+ 둘
