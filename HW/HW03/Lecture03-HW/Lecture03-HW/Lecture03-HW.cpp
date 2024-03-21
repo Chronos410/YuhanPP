@@ -16,26 +16,28 @@ enum ForeColour {
 
 int main()
 {
-    int num = 0;
-    int arr[7] = { 0 };
-    int memo, left;
+    int num = 0; // 입력받는 숫자
+    int temp = 0; // 입력받은 숫자 임시 저장
+    int left = 0; // 나머지 저장
+    int arr[7] = { 0 }; //2진수로 변환해 저장할 배열
+    
+    cout << "화면에 그림을 그리는 프로그램입니다." << endl;
+    cout << "학번 : 202034017" << endl;
+    cout << "이름 : 최영수" << endl;
+    
 
     while (num != 64)
-    {
-        cout << "화면에 그림을 그리는 프로그램입니다." << endl;
-        cout << "학번 : 202034017" << endl;
-        cout << "이름 : 최영수" << endl;
         cout << "화면에 그릴 물체코드를 입력하세요 : ";
 
         cin >> num;
 
         //2진수로 변경
-        memo = num;
+        temp = num;
 
         for (int i = 6; i > 0; i--)
         {
-            left = memo % 2;
-            memo = memo / 2;
+            left = temp % 2;
+            temp = temp / 2;
             if (left == 1)
             {
                 arr[i] = 1;
