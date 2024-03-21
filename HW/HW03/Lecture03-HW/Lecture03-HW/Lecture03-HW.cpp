@@ -23,17 +23,17 @@ int main()
     
     cout << "화면에 그림을 그리는 프로그램입니다." << endl;
     cout << "학번 : 202034017" << endl;
-    cout << "이름 : 최영수" << endl;
+    cout << "이름 : 최영수" << endl << endl;
     
 
     while (num != 64)
+    {
         cout << "화면에 그릴 물체코드를 입력하세요 : ";
 
         cin >> num;
-
-        //2진수로 변경
         temp = num;
 
+        //2진수 형태로 arr[]에 저장
         for (int i = 6; i > 0; i--)
         {
             left = temp % 2;
@@ -77,11 +77,12 @@ int main()
                 }
                 cout << "\x1b[1;" << colorpick << "m■";
             }
-            //cout << arr[i];
-            //이진수로 출력
+
+
+            //cout << arr[i];       //테스트용 이진수로 출력
+
         }
-        cout << "\x1b[0m" << endl;
-        //색 원래대로 복구
+        cout << "\x1b[0m" << endl;  //색 원래대로 복구
     }
     return 0;
 }
