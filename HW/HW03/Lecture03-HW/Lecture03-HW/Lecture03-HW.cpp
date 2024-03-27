@@ -51,9 +51,10 @@ int main()
         //색 블록 출력
         for (int i = 0; i < 7; i++)
         {
+            int colorpick = Black;
             if (arr[i] == 1)
             {
-                int colorpick = 0;
+                
                 switch (i)
                 {
                 case 1:
@@ -74,10 +75,13 @@ int main()
                 case 6:
                     colorpick = White;
                     break;
+                default:
+                    colorpick = Black;
+                    break;
                 }
-                cout << "\x1b[1;" << colorpick << "m■";
+                
             }
-
+            cout << "\x1b[1;" << colorpick << "m■";
 
             //cout << arr[i];       //테스트용 이진수로 출력
 
