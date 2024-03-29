@@ -2,67 +2,43 @@
 #include <iostream>
 #include <GLFW/glfw3.h>
 
-double mouseX;          //클릭한 시점의 마우스 좌표 저장
-double mouseY;
-bool isdrag = false;    //마우스를 드래그 중에 true, 릴리즈시 false
+double mouseX = 0.0;        //직전 커서 위치
+double mouseY = 0.0;
+double mouseXnow = 0.0;     //현재 커서 위치
+double mouseYnow = 0.0;
+bool ismove = false;    //커서 callback이 호출될때 true, 호출되지 않으면 0.1초 뒤 false
+bool isclick = false;   //마우스의 버튼이 눌려있으면 true, 아니면 false
 
 float red = 0.0f;
 float green = 0.0f;
 float blue = 0.0f;
 float alpha = 1.0f;
 
-
 void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 {
-    //left down
-    if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS)           
+    if ((button == GLFW_MOUSE_BUTTON_LEFT || button == GLFW_MOUSE_BUTTON_RIGHT) && action == GLFW_PRESS)
     {
-        glfwGetCursorPos(window, &mouseX, &mouseY);
-        red = 0.0f; green = 1.0f; blue = 0.0f; alpha = 1.0f;
+        isclick = true;
     }
-
-    //left up
-    else if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_RELEASE)    
+    else if ((button == GLFW_MOUSE_BUTTON_LEFT || button == GLFW_MOUSE_BUTTON_RIGHT) && action == GLFW_RELEASE)
     {
         red = 0.0f; green = 0.0f; blue = 0.0f; alpha = 1.0f;
-        isdrag = false;
-    }
-
-    //right down
-    else if (button == GLFW_MOUSE_BUTTON_RIGHT && action == GLFW_PRESS)     
-    {
-        glfwGetCursorPos(window, &mouseX, &mouseY);
-        red = 1.0f; green = 0.0f; blue = 0.0f; alpha = 1.0f;
-    }
-
-    //right up
-    else if (button == GLFW_MOUSE_BUTTON_RIGHT && action == GLFW_RELEASE)   
-    {
-        red = 0.0f; green = 0.0f; blue = 0.0f; alpha = 1.0f;
-        isdrag = false;
-    }
-
-    //idle
-    else                                                                    
-    {
-        red = 0.0f; green = 0.0f; blue = 0.0f; alpha = 1.0f;
-        isdrag = false;
+        isclick = false;
     }
 }
 
-
 void mouse_cursor_callback(GLFWwindow* window, double xpos, double ypos)
-{   
-    //left drag
-    if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS && (mouseX != xpos || mouseY != ypos))  
+{
+    glfwSetTime(0.0);   //시간 초기화
+        
+    if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS && ismove && isclick)          //좌클릭 중 움직임
     {
         red = 1.0f; green = 0.0f; blue = 1.0f; alpha = 1.0f;
     }
-    //right drag
-    if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT) == GLFW_PRESS && (mouseX != xpos || mouseY != ypos)) 
+    else if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT) == GLFW_PRESS && ismove && isclick)    //우클릭 중 움직임
     {
         red = 0.0f; green = 0.0f; blue = 1.0f; alpha = 1.0f;
-    }   
+    }
 }
 
 int main(void)
@@ -87,12 +63,39 @@ int main(void)
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
     {
-        
-        
-        glfwSetMouseButtonCallback(window, mouse_button_callback);  //버튼 콜백
-        glfwSetCursorPosCallback(window, mouse_cursor_callback);    //커서 콜백
 
-        glClearColor(red, green, blue, alpha);  //색 지정
+        glfwGetCursorPos(window, &mouseXnow, &mouseYnow);           //현재 커서 위치 최신화
+
+        glfwSetMouseButtonCallback(window, mouse_button_callback);  //마우스 버튼 클릭시 작동
+        
+        glfwSetCursorPosCallback(window, mouse_cursor_callback);    //마우스 커서 이동시 작동
+
+        
+        //if (glfwGetTime() < 0.01)   //커서 콜백 함수를 호출한지 0.01초 이내라면?
+        //{
+        //    ismove = true;
+        //}
+        //else
+        //{
+        //    ismove = false;
+        //}
+
+        glfwGetTime() < 0.01 ? ismove = true : ismove = false;
+
+        if (!ismove && isclick && glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS)         //좌클릭 시 색변경(녹색)
+        {
+            red = 0.0f; green = 1.0f; blue = 0.0f; alpha = 1.0f;
+        }
+        else if (!ismove && isclick && glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT) == GLFW_PRESS)   //우클릭 시 색변경(빨간색)
+        {
+            red = 1.0f; green = 0.0f; blue = 0.0f; alpha = 1.0f;
+        }
+
+        
+
+        glClearColor(red, green, blue, alpha);          //색 지정
+
+        glfwGetCursorPos(window, &mouseX, &mouseY);     //직전 커서 위치 최신화
 
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT);
