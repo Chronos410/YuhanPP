@@ -2,10 +2,6 @@
 #include <iostream>
 #include <GLFW/glfw3.h>
 
-double mouseX = 0.0;        //직전 커서 위치
-double mouseY = 0.0;
-double mouseXnow = 0.0;     //현재 커서 위치
-double mouseYnow = 0.0;
 bool ismove = false;    //커서 callback이 호출될때 true, 호출되지 않으면 0.1초 뒤 false
 bool isclick = false;   //마우스의 버튼이 눌려있으면 true, 아니면 false
 
@@ -64,8 +60,6 @@ int main(void)
     while (!glfwWindowShouldClose(window))
     {
 
-        glfwGetCursorPos(window, &mouseXnow, &mouseYnow);           //현재 커서 위치 최신화
-
         glfwSetMouseButtonCallback(window, mouse_button_callback);  //마우스 버튼 클릭시 작동
         
         glfwSetCursorPosCallback(window, mouse_cursor_callback);    //마우스 커서 이동시 작동
@@ -91,11 +85,7 @@ int main(void)
             red = 1.0f; green = 0.0f; blue = 0.0f; alpha = 1.0f;
         }
 
-        
-
         glClearColor(red, green, blue, alpha);          //색 지정
-
-        glfwGetCursorPos(window, &mouseX, &mouseY);     //직전 커서 위치 최신화
 
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT);
