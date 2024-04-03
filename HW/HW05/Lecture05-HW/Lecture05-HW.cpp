@@ -3,11 +3,11 @@
 #include <iostream>
 #include <GLFW/glfw3.h>
 
-double xNow, yNow = 0.0;
-double x, y = 0.0;
-float xFactor, yFactor = 0.0;
-float scaleFactor = 1.0f;
-bool leftc, rightc = false;
+double xNow, yNow = 0.0;        //현재 마우스 위치
+double x, y = 0.0;              //클릭할 때 저장되는 위치
+float xFactor, yFactor = 0.0;   //실질적으로 이동하는 수치
+float scaleFactor = 1.0f;       //사이즈 변경 수치
+bool leftc, rightc = false;     //좌,우 클릭에 따라 on off
 
 void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 {
@@ -15,6 +15,7 @@ void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
     {
         glfwGetCursorPos(window, &x, &y);
         leftc = true;
+
     }
     else if ((button == GLFW_MOUSE_BUTTON_RIGHT) && action == GLFW_PRESS)
     {
@@ -81,11 +82,11 @@ int main(void)
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
     {
-        glfwPollEvents();
 
         glfwSetMouseButtonCallback(window, mouse_button_callback);
 
         glfwGetCursorPos(window, &xNow, &yNow);
+
         if (leftc)
         {
             xFactor = (xNow - x) * 0.002;
