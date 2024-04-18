@@ -37,7 +37,7 @@ int init() {
 	return 0;
 }
 
-int render()
+int rendermain()
 {
 	glClearColor(0.1f, 0.2f, 0.5f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
@@ -73,7 +73,7 @@ int main(void)
 	{
 		glfwPollEvents();
 
-		render();
+		rendermain();
 
 		glfwSwapBuffers(window);
 	}
