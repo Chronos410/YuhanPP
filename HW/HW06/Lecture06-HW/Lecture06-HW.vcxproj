@@ -130,11 +130,15 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MObject.cpp" />
     <ClCompile Include="MSList.cpp" />
+    <ClCompile Include="TestMObject.cpp" />
+    <ClCompile Include="TestMSList.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MObject.h" />
     <ClInclude Include="MSList.h" />
-    <ClInclude Include="Star.hpp" />
+    <ClInclude Include="star.hpp" />
+    <ClInclude Include="TestMObject.h" />
+    <ClInclude Include="TestMSList.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

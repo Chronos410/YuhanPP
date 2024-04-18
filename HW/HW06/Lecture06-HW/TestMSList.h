@@ -12,11 +12,11 @@ struct HeadNode {
 };
 
 
-class MSList
+class TestMSList
 {
 public:
-	MSList();
-	~MSList();
+	TestMSList();
+	~TestMSList();
 
 	virtual HeadNode* createList();
 	virtual void pushBack(HeadNode* headPointer, MObject* star);

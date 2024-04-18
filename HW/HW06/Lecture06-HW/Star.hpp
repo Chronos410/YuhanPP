@@ -9,7 +9,7 @@ class Star : public MObject
     float red, green, blue = 0;
 
 public: 
-    Star()          //Star()로 객체가 생성될 때마다 실행되는 "생성자"
+    Star()          //new Star()로 객체가 생성될 때마다 실행되는 생성자
     {          
         std::random_device rd;
 
@@ -25,16 +25,17 @@ public:
         red = colordis(colorgen);
         green = colordis(colorgen);
         blue = colordis(colorgen);
-        //각각의 Star 객체가 가지는 위치, 색상 값을 랜덤으로 입력
+        //각각의 Star 객체가 만들어질 때마다 위치, 색상 값을 랜덤으로 입력
     }
-	void render()   //별 그리는 함수, 5주차 과제와 동일한 구조. 그야 복붙했으니까
+
+	void render()   //별 그리는 함수, 5주차 과제와 동일한 구조.
 	{
-        float scaleFactor = 0.5f;       //조금 사이즈를 줄이는데 재활용했다.
+        float scaleFactor = 0.4f;       //조금 사이즈를 줄이는데 재활용했다.
         float xFactor = x;
         float yFactor = y;              //랜덤 위치값 적용
         
         glBegin(GL_TRIANGLES);
-        glColor3f(red, green, blue);    //랜덤 색상값 적용
+        glColor3f(red, green, blue);    //랜덤 색상값 적용 이하 동일
 
         glVertex2f((-0.6f * scaleFactor) + xFactor, (0.4f * scaleFactor) + yFactor);
         glVertex2f((0.6f * scaleFactor) + xFactor, (0.4f * scaleFactor) + yFactor);
