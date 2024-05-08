@@ -56,6 +56,8 @@ int main(void)
 
 	//Star 객체를 생성하는 부분
 	MObject* temp[300];
+	
+
 	for (int i = 0; i < 300; i++)
 	{
 		temp[i] = new Star();						//Star 생성자 300번 돌려서
