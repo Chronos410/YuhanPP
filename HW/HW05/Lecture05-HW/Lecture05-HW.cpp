@@ -5,8 +5,8 @@
 
 double xNow, yNow = 0.0;        //현재 마우스 위치
 double x, y = 0.0;              //클릭할 때 저장되는 위치
-float xFactor, yFactor = 0.0;   //실질적으로 이동하는 수치
-float scaleFactor = 1.0f;       //사이즈 변경 수치
+float moon_x, moon_y = 0.0;   //실질적으로 이동하는 수치
+float moon_scale = 1.0f;       //사이즈 변경 수치
 bool leftc, rightc = false;     //좌,우 클릭에 따라 on off
 
 void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
@@ -51,9 +51,9 @@ int renderStar() {
     glBegin(GL_TRIANGLES);
     glColor3f(1.0f, 1.0f, 1.0f);
 
-    glVertex2f((-0.4f * scaleFactor) + xFactor, (-0.8f * scaleFactor) + yFactor);
-    glVertex2f((0.0f * scaleFactor) + xFactor, (1.0f * scaleFactor) + yFactor);
-    glVertex2f((0.2f * scaleFactor) + xFactor, (-0.2f * scaleFactor) + yFactor);
+    glVertex2f((-0.4f * moon_scale) + moon_x, (-0.8f * moon_scale) + moon_y);
+    glVertex2f((0.0f * moon_scale) + moon_x, (1.0f * moon_scale) + moon_y);
+    glVertex2f((0.2f * moon_scale) + moon_x, (-0.2f * moon_scale) + moon_y);
 
     glEnd();
 
