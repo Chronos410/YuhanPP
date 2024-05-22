@@ -36,7 +36,7 @@ float earth_degree;         //공전 각도
 
 //달에 사용되는 변수
 float moon_scale = 0.05f;
-float moon_x = 0.2f;
+float moon_x = 0.25f;
 float moon_y = 0.0f;
 float moon_speed = 2.222f;    //공전속도 (20 RPM)
 
@@ -223,7 +223,8 @@ int main(void)
         double currentTime = glfwGetTime();
         float deltaTime = static_cast<float>(currentTime - lastTime);
         lastTime = currentTime;     //대충 시간 deltaTime구하는 방법 복붙
-        
+        std::wcout << glfwGetTime() << std::endl;   //점점증가
+        std::wcout << deltaTime << std::endl;       // 프레임당 시간이라 늘어나지않음
 
         //태양의 1, 2번 무늬가 위치할 좌표 x, y 와 2번 무늬가 필요로 하는 현재 각도
         sunalpha_x = sunalpha_x * cosf(sun_speed * deltaTime) - sunalpha_y * sinf(sun_speed * deltaTime);
