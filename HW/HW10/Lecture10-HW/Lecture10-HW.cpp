@@ -39,6 +39,7 @@ float moon_scale = 0.05f;
 float moon_x = 0.2f;
 float moon_y = 0.0f;
 float moon_speed = 2.222f;    //공전속도 (20 RPM)
+float moon_degree;
 
 int RenderSun() {
 
@@ -118,7 +119,7 @@ int RenderEarth(){
     float x = xsize * cosf(earth_degree * 6) - ysize * sinf(earth_degree * 6);
     float y = xsize * sinf(earth_degree * 6) + ysize * cos(earth_degree * 6);
     //자전은 6rpm 이고 
-    //공전은 1rpm 이니까 공전 각도에 x6하면 야호 딱 맞는다~
+    //공전은 1rpm 이니까 공전 각도에 x6하면 야호 딱 맞는다
 
     glVertex2f(x + earth_x, y + earth_y);
     glVertex2f(-y + earth_x, x + earth_y);
@@ -140,13 +141,13 @@ int RenderEarth(){
 
 float xcal(float x, float y)
 {
-    float result = x * cosf(earth_degree * 20) - y * sinf(earth_degree * 20);
+    float result = x * cosf(moon_degree) - y * sinf(moon_degree);
 
     return result;
 }
 float ycal(float x, float y)
 {
-    float result = x * sinf(earth_degree * 20) + y * cos(earth_degree * 20);
+    float result = x * sinf(moon_degree) + y * cos(moon_degree);
 
     return result;
 }
@@ -241,6 +242,7 @@ int main(void)
         //달이 위치할 좌표와 각도
         moon_x = moon_x * cosf(moon_speed * deltaTime) - moon_y * sinf(moon_speed * deltaTime);
         moon_y = moon_x * sinf(moon_speed * deltaTime) + moon_y * cosf(moon_speed * deltaTime);
+        moon_degree = atan2f(moon_y - earth_y, moon_x - earth_x);
 
         glClearColor(1.0f, 1.0f, 1.0f, 1.0f); //clear 할 색
         glClear(GL_COLOR_BUFFER_BIT);
