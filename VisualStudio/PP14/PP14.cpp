@@ -2,6 +2,8 @@
 #include <iostream>
 #include <GLFW/glfw3.h>
 #include <chrono>
+#include <thread>
+#include<time.h>
 
 float playerX = -0.5f;
 float playerY = -0.5f;
@@ -19,9 +21,24 @@ float landYscale = landYsize / 2.0f;
 
 float gravity = (9.8f * 0.1f) / (60.0f);
 
+bool isLanded = false;
+
+const int TARGET_FPS = 60;
+const double TARGET_FRAME_TIME = 1.0 / TARGET_FPS;
+
 //디버그목적
-int ss;
-float lowVelocity = 0.0f;
+int ff=0;
+std::chrono::duration<double> ss;
+
+
+void tryJump()
+{
+    if (isLanded)
+    {
+        isLanded = false;
+        playerY_velocity = playerY_velocity + 0.6f;
+    }
+}
 
 void errorCallback(int error, const char* description) {
     std::cerr << "코드" << error << description;
@@ -35,7 +52,8 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 
     if (key == GLFW_KEY_SPACE && action == GLFW_PRESS)
     {
-        playerY_velocity = playerY_velocity + 0.1f;
+        //playerY_velocity = playerY_velocity + 0.6f;
+        tryJump();
     }
 }
 
@@ -64,8 +82,12 @@ void render_Player()
     glEnd();
 }
 
+
 int main(void)
 {
+
+    auto st = std::chrono::steady_clock::now();
+
     GLFWwindow* window;
 
     /* Initialize the library */
@@ -85,14 +107,14 @@ int main(void)
     glfwSetErrorCallback(errorCallback);
     glfwSetKeyCallback(window, key_callback);
 
-    glfwSwapInterval(1);//프레임을 모니터 주사율에 맞춤 => 지금은 60fps
+    glfwSwapInterval(0);//프레임을 모니터 주사율에 맞춤 => 끄기
 
-    auto startTime = std::chrono::system_clock::now();
-
+    auto startTime = std::chrono::steady_clock::now();
+    
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
     {
-        std::chrono::duration<double>sec = std::chrono::system_clock::now() - startTime;
+        auto frameStartTime = std::chrono::steady_clock::now();
 
         glfwPollEvents();
         /* Render here */
@@ -100,41 +122,62 @@ int main(void)
         glClearColor(1.0f, 0.0f, 1.0f, 1.0f); //clear 할 색
         glClear(GL_COLOR_BUFFER_BIT);
 
+
         if ((playerX - playerScale) > (landX - landXscale) && (playerX - playerScale) < (landX + landXscale) || (playerX + playerScale) > (landX - landXscale) && (playerX + playerScale) < (landX + landXscale))
         {
             if ((playerY - playerScale) > (landY - landYscale) && (playerY - playerScale) < (landY + landYscale) || (playerY + playerScale) > (landY - landYscale) && (playerY + playerScale) < (landY + landYscale))
             {
                 playerY_velocity = 0.0f;
+                isLanded = true;
             }
-        }
+        }//충돌체크
+
 
         playerY_velocity = playerY_velocity - gravity;
+        //플레이어 Y 속도에 중력 적용
 
-        playerX = playerX + playerX_velocity;
-        playerY = playerY + playerY_velocity;
-        //속도 적용
+        playerX = playerX + playerX_velocity/TARGET_FPS;
+        playerY = playerY + playerY_velocity/TARGET_FPS;
+        //플레이어 위치에 속도 적용
 
         if (playerY - playerScale < landY + landYscale)     //땅 뚫고 들어가기 방지
         {
             playerY = landY + landYscale + playerScale;
             playerY_velocity = 0.0f;
+            isLanded = true;
         }
 
         render_Land();
         render_Player();
         //연산 끝나고 렌더
 
-        if (sec.count() > 2 && sec.count() < 3) 
-        {
-            std::cout << ss << std::endl;
-            ss++;
-        }
+        
 
+
+        
         /* Swap front and back buffers */
         glfwSwapBuffers(window);
 
         /* Poll for and process events */
         glfwPollEvents();
+
+        auto frameEndTime = std::chrono::steady_clock::now();
+        std::chrono::duration<double> elapsedTime = frameEndTime - frameStartTime;
+
+        // 목표 프레임 시간까지 대기
+        double sleepTime = TARGET_FRAME_TIME - elapsedTime.count();
+        if (sleepTime > 0) {
+            std::this_thread::sleep_for(std::chrono::duration<double>(sleepTime));
+        }
+        std::chrono::duration<double> ss = std::chrono::steady_clock::now() - st;
+        if (ss.count() > 2.0 && ss.count() < 3.0)
+        {
+            ff++;
+
+            std::cout << TARGET_FRAME_TIME - elapsedTime.count() << std::endl;
+            std::cout << ff << std::endl;
+        }
+
     }
 
     glfwTerminate();
