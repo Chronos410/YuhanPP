@@ -39,7 +39,6 @@ float moon_scale = 0.05f;
 float moon_x = 0.25f;
 float moon_y = 0.0f;
 float moon_speed = 2.222f;    //공전속도 (20 RPM)
-float moon_degree;
 
 int RenderSun() {
 
@@ -141,13 +140,13 @@ int RenderEarth(){
 
 float xcal(float x, float y)
 {
-    float result = x * cosf(moon_degree) - y * sinf(moon_degree);
+    float result = x * cosf(earth_degree * 20) - y * sinf(earth_degree * 20);
 
     return result;
 }
 float ycal(float x, float y)
 {
-    float result = x * sinf(moon_degree) + y * cos(moon_degree);
+    float result = x * sinf(earth_degree * 20) + y * cos(earth_degree * 20);
 
     return result;
 }
@@ -240,10 +239,10 @@ int main(void)
         earth_y = earth_x * sinf(earth_speed * deltaTime) + earth_y * cosf(earth_speed * deltaTime);
         earth_degree = atan2f(earth_y, earth_x);
 
-        //달이 위치할 좌표와 각도
+        //달이 위치할 좌표
         moon_x = moon_x * cosf(moon_speed * deltaTime) - moon_y * sinf(moon_speed * deltaTime);
         moon_y = moon_x * sinf(moon_speed * deltaTime) + moon_y * cosf(moon_speed * deltaTime);
-        moon_degree = atan2f(moon_y - earth_y, moon_x - earth_x);
+
 
         glClearColor(1.0f, 1.0f, 1.0f, 1.0f); //clear 할 색
         glClear(GL_COLOR_BUFFER_BIT);
