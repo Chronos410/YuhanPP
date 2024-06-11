@@ -110,11 +110,13 @@ int main(void)
     glfwSwapInterval(0);//프레임을 모니터 주사율에 맞춤 => 끄기
 
     auto startTime = std::chrono::steady_clock::now();
+    auto frameStartTime = std::chrono::steady_clock::now();
+    auto frameEndTime = std::chrono::steady_clock::now();
     
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
     {
-        auto frameStartTime = std::chrono::steady_clock::now();
+        frameStartTime = std::chrono::steady_clock::now();
 
         glfwPollEvents();
         /* Render here */
@@ -161,21 +163,13 @@ int main(void)
         /* Poll for and process events */
         glfwPollEvents();
 
-        auto frameEndTime = std::chrono::steady_clock::now();
+        frameEndTime = std::chrono::steady_clock::now();
         std::chrono::duration<double> elapsedTime = frameEndTime - frameStartTime;
 
         // 목표 프레임 시간까지 대기
         double sleepTime = TARGET_FRAME_TIME - elapsedTime.count();
         if (sleepTime > 0) {
             std::this_thread::sleep_for(std::chrono::duration<double>(sleepTime));
-        }
-        std::chrono::duration<double> ss = std::chrono::steady_clock::now() - st;
-        if (ss.count() > 2.0 && ss.count() < 3.0)
-        {
-            ff++;
-
-            std::cout << TARGET_FRAME_TIME - elapsedTime.count() << std::endl;
-            std::cout << ff << std::endl;
         }
 
     }
