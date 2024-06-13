@@ -19,7 +19,7 @@ float landY = -0.9f;
 float landYsize = 0.2f;
 float landYscale = landYsize / 2.0f;
 
-float gravity = (9.8f * 0.1f) / (60.0f);
+float gravity = (4.9f) / (60.0f);
 
 bool isLanded = false;
 
@@ -31,14 +31,6 @@ int ff=0;
 std::chrono::duration<double> ss;
 
 
-void tryJump()
-{
-    if (isLanded)
-    {
-        isLanded = false;
-        playerY_velocity = playerY_velocity + 0.6f;
-    }
-}
 
 void errorCallback(int error, const char* description) {
     std::cerr << "코드" << error << description;
@@ -52,8 +44,12 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 
     if (key == GLFW_KEY_SPACE && action == GLFW_PRESS)
     {
-        //playerY_velocity = playerY_velocity + 0.6f;
-        tryJump();
+        //tryJump
+        if (isLanded)
+        {
+            isLanded = false;
+            playerY_velocity = playerY_velocity + 1.3f;
+        }
     }
 }
 
